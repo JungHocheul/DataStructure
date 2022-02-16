@@ -2,6 +2,6 @@
 
 make clean;make
 
-value=D_linked
+value=s_linked
 cp -rp ./$value ./../bin
 rm -rf ./$value
