@@ -1,0 +1,4 @@
+
+int lsempty(void)
+{
+}

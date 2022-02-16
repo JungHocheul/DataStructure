@@ -30,6 +30,9 @@ typedef struct _CNode
  */
 /*1. Circular Linked list function | Circular_list.c */
 CNode *create_Cnode();
-void add_circular_Node(CNode *node,int pos , int data); // add right side
+void add_circular_Node(CNode *node, int data); // add right side
+void Show_list(CNode *node);
+
+void insert_circular_Node(CNode *node, int data);
+
 void del_circular_Node(CNode *node, int pos);
-void print_node(CNode *node);
