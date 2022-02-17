@@ -51,20 +51,26 @@ void add_circular_Node(CNode *node, int data)
 	 new_node->data = data;
     }
 }
-
-void insert_circular_Node(CNode *node, int data)
+#if 0
+void insert_circular_Node(CNode *node,int pos, int data)
 {
 /* cnt      0                        1                       2                     3
- * node                            node                    node3
- * add node									 new_node
+ * node                            node					         node3
+ * add node						 new_node
  * addr   0x00                   (0x01)                    (0x02)                (0x03)
- * struct  | data | next(0x01) |->| data | next(0x02) |-> | data | next(0x00) |  |data| next(0x00)| 
+ * struct  | data | next(0x01) |->| data | next(0x02) |   | data | next(0x00) |  |data| next(0x00)| 
  * struct  | data | next(0x01) |->| data | next(0x02) |-> | data | next(0x03) |->|data| next(0x00)|->
  * */
-
     int i=0;
+    CNode *new_node = malloc(sizeof(CNode));
+    if(node == null)
+    {
+	printf(" node no exist\n");
+	return;
+    }
 
 }
+#endif
 void Show_list(CNode *node)
 {
     CNode *tmp_node = node->next;
@@ -78,33 +84,23 @@ void Show_list(CNode *node)
     }
     printf(" ]\n");  
 }
-#if 0
-void del_circular_Node(CNode *node, int pos)
+
+void total_del_Node(CNode *node)
 {
-    int i;
-    Node *pre_node = node->tail;
-    Node *del_node = node->tail;
-    
-    if( node->cnt ==0)
+    if( node == NULL)
     {
-	printf("->  No exist node... \n");
+	printf("-> No exist Circular node....\n");
+	return;
     }
-    else
+    
+    CNode *cur = node;
+    CNode *del_node;
+
+    printf("-> All Node Delete start....\n");
+    while( cur!=NULL)
     {
-	for(  i =0; i<pos ; i++)
-	{
-	    pre_node = pre_node->next;
-	}
-
-	del_node = pre_node->next;
-	pre_node->next = del_node->next;
-	free(del_node);
-
-	if(pos == node->cnt-1)
-	{
-	    node->tail = pre_node;
-	}
-	node->cnt--;
+	del_node= cur->next;
+	free(cur);
+	cur = del_node;
     }
 }
-#endif

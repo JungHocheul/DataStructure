@@ -9,13 +9,16 @@ int main(int argc ,char const *argv[])
     /*first node create*/
     CNode *list = create_Cnode();
 
-   
-    add_circular_Node(list, arrData[0]);
-    add_circular_Node(list, arrData[1]);
-    Show_list(list);
-    free(list);
-
+  
+    for(i=0 ; i<sizeof(arrData)/sizeof(int) ; i++)
+    {
+        add_circular_Node(list, arrData[i]);
+	Show_list(list);
+    }
+    printf(" data end adding....\n");
     printf("==================================\n");
+    Show_list(list);
+    total_del_Node(list);
 #if 0
     del_circular_Node(list, 4);
     print_node(list);

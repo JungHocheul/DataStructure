@@ -32,7 +32,7 @@ typedef struct _CNode
 CNode *create_Cnode();
 void add_circular_Node(CNode *node, int data); // add right side
 void Show_list(CNode *node);
+void total_del_Node(CNode *node);
 
-void insert_circular_Node(CNode *node, int data);
+//void insert_circular_Node(CNode *node, int data);
 
-void del_circular_Node(CNode *node, int pos);
