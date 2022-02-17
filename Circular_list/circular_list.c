@@ -85,22 +85,18 @@ void Show_list(CNode *node)
     printf(" ]\n");  
 }
 
-void total_del_Node(CNode *node)
+void del_node(CNode *node)
 {
     if( node == NULL)
     {
 	printf("-> No exist Circular node....\n");
 	return;
     }
-    
     CNode *cur = node;
-    CNode *del_node;
+    CNode *del_node = null;
 
-    printf("-> All Node Delete start....\n");
-    while( cur!=NULL)
-    {
-	del_node= cur->next;
-	free(cur);
-	cur = del_node;
-    }
+    del_node= cur->next;
+    cur->next = del_node->next;
+    free(del_node);
+    Show_list(cur);
 }

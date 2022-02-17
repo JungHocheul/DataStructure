@@ -18,7 +18,7 @@ int main(int argc ,char const *argv[])
     printf(" data end adding....\n");
     printf("==================================\n");
     Show_list(list);
-    total_del_Node(list);
+    del_node(list);
 #if 0
     del_circular_Node(list, 4);
     print_node(list);
