@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git add .
+git add -A
 echo -n "Commit comment>"
 read comment
 git commit -m "$comment"
