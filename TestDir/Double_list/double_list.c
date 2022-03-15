@@ -106,8 +106,8 @@ void add_Lside(Node *cur, int data)
 	new_node->next = tmp;
 	new_node->data =data;
 
+	tmp->prev = new_node;
     }
-    tmp->prev = new_node;
     printf("Left side adding data... %d\n",new_node->data);
     return;
 }
@@ -122,12 +122,13 @@ void total_del_node(Node *node)
 
     Node *tmp = node;
     Node *next;
-    while( tmp != null)
+    while( tmp->next != null)
     {
-	next = tmp->next;
+	tmp->next->prev = tmp->prev;
+	tmp->prev->next = tmp->next;
 	free(tmp);
-	tmp = next;
+	tmp = tmp->next;
     }	
-    printf("node total distory \n");
+    printf("node total destory \n");
     return;
 }

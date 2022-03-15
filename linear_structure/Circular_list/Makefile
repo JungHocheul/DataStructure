@@ -1,9 +1,9 @@
 CC = gcc
 INC = -I./linked.h
 CFLAGS = -W -Wall -lpthread -lread
-TARGET = d_linked
-OBJECTS = double_list.o main.o
-SRCS = double_list.c main.c
+TARGET = c_linked
+OBJECTS = circular_list.o main.o
+SRCS = circular_list.c main.c
 
 all : $(TARGET)
 	$(CC) -o $(TARGET) $(OBJECTS) $(INC)
